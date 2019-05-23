@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">Referee App</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="reg_header">Registration</string>
+    <string name="reg_email">Email</string>
+    <string name="reg_name">Name</string>
+    <string name="reg_lastname">Lastname</string>
+    <string name="reg_pass">Password</string>
+    <string name="reg_pass_repeat">Repeat password</string>
+    <string name="reg_info">Status</string>
+    <string name="reg_email_example" translatable="false">example@somemail.com</string>
+    <string name="reg_submit">Register</string>
+    <string name="reg_unrequire">Not require</string>
+    <string name="reg_err_pass_lenth">Password must be minimum 6 signs</string>
+    <string name="reg_err_connect">Error connection</string>
+    <string name="reeg_err_exist" translatable="false">Mail already exist</string>
+    <string name="login_title">Login</string>
+    <string name="login_in">Login</string>
+    <string name="login_err_bad_email">Wrong email</string>
+    <string name="login_err_wrong_pass">Wrong password</string>
+    <string name="choose_header">Contest choose</string>
+    <string name="choose_code">Input key of contest</string>
+    <string name="choose_new">New Contest</string>
+    <string name="choose_btn_new">New contest</string>
+    <string name="choose_btn_code">Choose contest</string>
+    <string name="choose_name">Name</string>
+    <string name="choose_create">Create contest</string>
+    <string name="choose_confirm">OK</string>
+    <string name="choose_err_name">Enter name</string>
+    <string name="choose_err_code">Wrong code</string>
+    <string name="chooose_key">Code</string>
+    <string name="choose_new_ok">Success</string>
+    <string name="menu_title">Contest</string>
+    <string name="contest_name">"Contest: "</string>
+    <string name="contest_key">Key:</string>
+    <string name="contest_begin">Begin cotest</string>
+    <string name="contest_edit">Edit</string>
+    <string name="contest_add_team">Register team</string>
+    <string name="fields_title">Edit rules</string>
+    <string name="add_info">Add info</string>
+    <string name="add_field">Add field</string>
+    <string name="header_info">Info</string>
+    <string name="header_field">Fields</string>
+    <string name="empty_fields">No fields</string>
+    <string name="item_max">max:</string>
+    <string name="ite_faactor" translatable="false">X</string>
+</resources>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Referee App</string>
+    <string name="reg_header">Регистрация</string>
+    <string name="reg_email">Адрес электронной поччты</string>
+    <string name="reg_name">Имя</string>
+    <string name="reg_lastname">Фамилия</string>
+    <string name="reg_pass">Пароль</string>
+    <string name="reg_pass_repeat">Повторите пароль</string>
+    <string name="reg_info">Должность(необязательно)</string>
+    <string name="reg_submit">Зарегистрироваться</string>
+    <string name="reg_unrequire">(Необязательно)</string>
+    <string name="reg_err_pass_lenth">Пароль должен иметь хотя ды 7 символов.</string>
+    <string name="reg_err_connect">Ошибка подключения</string>
+    <string name="login_title">Вход в систему</string>
+    <string name="login_in">Вход</string>
+    <string name="login_err_bad_email">Неверный адрес электронной почты</string>
+    <string name="login_err_wrong_pass">Неправильный пароль</string>
+    <string name="choose_header">Выбор соревноания</string>
+    <string name="choose_code">Введите ключ соревннования</string>
+    <string name="choose_new">Создать соревнование</string>
+    <string name="choose_btn_code">Выбрать соревнование</string>
+    <string name="choose_btn_new">Создать соревнование</string>
+    <string name="choose_name">Название соревнования</string>
+    <string name="choose_create">Создать</string>
+    <string name="choose_confirm">Подтвердить</string>
+    <string name="choose_err_name">Введите имя</string>
+    <string name="choose_err_code">Неверный код</string>
+    <string name="chooose_key">Пароль соревнования:</string>
+    <string name="choose_new_ok">Новое оревнование создано</string>
+    <string name="menu_title">Меню соревнования</string>
+    <string name="contest_name">"Соревнование: "</string>
+    <string name="contest_key">"Пароль: "</string>
+    <string name="contest_begin">Начать соревнование</string>
+    <string name="contest_edit">Редактировать</string>
+    <string name="contest_add_team">Добавить команду</string>
+    <string name="fields_title">Редактирование соревнований</string>
+    <string name="add_info">Добавить информацию</string>
+    <string name="add_field">Добавить критерий оценки</string>
+    <string name="header_info">Информаця</string>
+    <string name="header_field">Критерии оценки</string>
+    <string name="empty_fields">Нет критериев</string>
+    <string name="item_max">макс:</string>
+</resources>
