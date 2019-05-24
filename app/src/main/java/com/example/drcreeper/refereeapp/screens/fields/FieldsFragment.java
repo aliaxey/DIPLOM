@@ -12,6 +12,7 @@ import com.example.drcreeper.refereeapp.interfaces.FragmentWorker;
 
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 public class FieldsFragment extends Fragment {
 
@@ -29,6 +30,7 @@ public class FieldsFragment extends Fragment {
         FragmentFieldsBinding binding =
                 DataBindingUtil.inflate(inflater,R.layout.fragment_fields,container,false);
         binding.setVm(viewModel);
+        binding.recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         return binding.getRoot();
     }
 

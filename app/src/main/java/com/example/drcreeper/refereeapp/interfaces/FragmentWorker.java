@@ -6,4 +6,5 @@ public interface FragmentWorker {
     void switchFragment(Fragment newFragment);
     void setHeader(String title);
     void setHeader(int title);
+    void onBack();
 }

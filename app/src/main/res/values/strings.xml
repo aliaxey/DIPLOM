@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">Referee App</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="reg_header">Registration</string>
     <string name="reg_email">Email</string>
@@ -15,7 +14,7 @@
     <string name="reg_unrequire">Not require</string>
     <string name="reg_err_pass_lenth">Password must be minimum 6 signs</string>
     <string name="reg_err_connect">Error connection</string>
-    <string name="reeg_err_exist" translatable="false">Mail already exist</string>
+    <string name="reeg_err_exist">Mail already exist</string>
     <string name="login_title">Login</string>
     <string name="login_in">Login</string>
     <string name="login_err_bad_email">Wrong email</string>
@@ -46,4 +45,15 @@
     <string name="empty_fields">No fields</string>
     <string name="item_max">max:</string>
     <string name="ite_faactor" translatable="false">X</string>
+    <string name="add_field_name">Field name</string>
+    <string name="add_field_max">Max value</string>
+    <string name="add_field_factor">Factor</string>
+    <string name="add_field_help_max" translatable="false">10</string>
+    <string name="add_field_help_factor" translatable="false">1</string>
+    <string name="err_no_name">Input name</string>
+    <string name="err_wrong_max">Wrong max value</string>
+    <string name="err_wrong_factor">Wrong factor</string>
+    <string name="wrong_number">Wrong number</string>
+    <string name="add_info_name">Info name</string>
+    <string name="add_team_title">Add team</string>
 </resources>

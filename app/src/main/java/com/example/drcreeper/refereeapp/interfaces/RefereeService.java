@@ -1,8 +1,10 @@
 package com.example.drcreeper.refereeapp.interfaces;
 
 import com.example.drcreeper.refereeapp.Answer;
+import com.example.drcreeper.refereeapp.RefereeApp;
 import com.example.drcreeper.refereeapp.models.ContestFields;
 import com.example.drcreeper.refereeapp.models.ContestInfo;
+import com.google.gson.JsonObject;
 
 import okhttp3.RequestBody;
 import retrofit2.Call;
@@ -22,4 +24,11 @@ public interface RefereeService {
     Call<ContestInfo> getInfo(@Body RequestBody body);
     @POST("/api/getfields.php")
     Call<ContestFields> getFields(@Body RequestBody body);
+    @POST("/api/addinfo.php")
+    Call<Answer> addInfo(@Body RequestBody body);
+    @POST("/api/addfield.php")
+    Call<Answer> addField(@Body RequestBody body);
+    @POST("/api/addteam.php")
+    Call<Answer> addTeam(@Body JsonObject json);
+
 }

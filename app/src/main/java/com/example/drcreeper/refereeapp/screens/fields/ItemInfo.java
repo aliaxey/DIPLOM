@@ -2,9 +2,9 @@ package com.example.drcreeper.refereeapp.screens.fields;
 
 import androidx.databinding.BaseObservable;
 
-public class ItemHeader extends BaseObservable {
+public class ItemInfo extends BaseObservable {
     private String name;
-    public ItemHeader(){
+    public ItemInfo(){
         
     }
 

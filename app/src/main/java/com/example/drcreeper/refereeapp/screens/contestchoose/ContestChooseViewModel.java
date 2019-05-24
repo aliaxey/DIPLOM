@@ -135,8 +135,6 @@ public class ContestChooseViewModel extends BaseObservable {
                         DialogInterface.OnClickListener onCreateContest = new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                //setNewContest(false);
-                                //setCode(code);
                                 preferences.setContest(response.body().getResult());
                             }
                         };
@@ -168,7 +166,7 @@ public class ContestChooseViewModel extends BaseObservable {
     private String getKey(){
         StringBuilder result = new StringBuilder("c");
         for (int i = 0;i<5;i++){
-            result.append((char)(Math.random()*27+95));
+            result.append((char)(Math.random()*25+97));
         }
         return result.toString();
     }

@@ -41,4 +41,14 @@
     <string name="header_field">Критерии оценки</string>
     <string name="empty_fields">Нет критериев</string>
     <string name="item_max">макс:</string>
+    <string name="add_field_name">Название критерия оценки</string>
+    <string name="add_field_max">Максимальная оценка</string>
+    <string name="add_field_factor">Множитель</string>
+    <string name="reeg_err_exist">Такая почта уже существует</string>
+    <string name="err_no_name">Введите имя</string>
+    <string name="err_wrong_max">Неверная максимальная оценка. Она должна быть положительной.</string>
+    <string name="err_wrong_factor">Неверный множитель</string>
+    <string name="wrong_number">Неверно введено число</string>
+    <string name="add_info_name">Название свойства команды</string>
+    <string name="add_team_title">Добавить команду</string>
 </resources>

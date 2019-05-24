@@ -6,7 +6,7 @@
         <import type="android.view.View"/>
         <variable
             name="vm"
-            type="com.example.drcreeper.refereeapp.screens.fields.FieldsViewModel"/>
+            type="com.example.drcreeper.refereeapp.screens.addteam.AddTeamViewModel"/>
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

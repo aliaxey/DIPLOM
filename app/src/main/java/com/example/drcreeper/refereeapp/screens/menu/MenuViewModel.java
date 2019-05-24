@@ -9,10 +9,13 @@ import com.example.drcreeper.refereeapp.RefereeApp;
 import com.example.drcreeper.refereeapp.SharedPreferencesWorker;
 import com.example.drcreeper.refereeapp.interfaces.FragmentWorker;
 import com.example.drcreeper.refereeapp.models.ContestInfo;
+import com.example.drcreeper.refereeapp.screens.addteam.AddTeamFragment;
+import com.example.drcreeper.refereeapp.screens.contest.ContestFragment;
 import com.example.drcreeper.refereeapp.screens.contestchoose.ContestChooseFragment;
 import com.example.drcreeper.refereeapp.screens.fields.FieldsFragment;
 
 import androidx.databinding.BaseObservable;
+import androidx.fragment.app.Fragment;
 import okhttp3.FormBody;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -87,10 +90,10 @@ public class MenuViewModel extends BaseObservable {
     public void onClick(View v){
         switch (v.getId()){
             case R.id.btn_start:
-
+                fragmentWorker.switchFragment(new ContestFragment());
                 break;
             case R.id.btn_reg:
-
+                fragmentWorker.switchFragment(new AddTeamFragment());
                 break;
             case R.id.btn_edit:
                 fragmentWorker.switchFragment(new FieldsFragment());
