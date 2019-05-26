@@ -51,4 +51,13 @@
     <string name="wrong_number">Неверно введено число</string>
     <string name="add_info_name">Название свойства команды</string>
     <string name="add_team_title">Добавить команду</string>
+    <string name="err_null_values">Введите значения</string>
+    <string name="err_no_properties">Сначала нужно добавить информацию и критерии оценки</string>
+    <string name="menu_set_contest">Сменить соревнование</string>
+    <string name="menu_logout">Сменить пользователя</string>
+    <string name="contest">Оценка команд</string>
+    <string name="submit">Отправить</string>
+    <string name="err_number">Ошибка номера</string>
+    <string name="err_max_value">Оценка больше максимальной</string>
+    <string name="success">Успешно отправлено</string>
 </resources>

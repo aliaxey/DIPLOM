@@ -4,6 +4,7 @@ import com.example.drcreeper.refereeapp.Answer;
 import com.example.drcreeper.refereeapp.RefereeApp;
 import com.example.drcreeper.refereeapp.models.ContestFields;
 import com.example.drcreeper.refereeapp.models.ContestInfo;
+import com.example.drcreeper.refereeapp.models.ContestTab;
 import com.google.gson.JsonObject;
 
 import okhttp3.RequestBody;
@@ -29,6 +30,10 @@ public interface RefereeService {
     @POST("/api/addfield.php")
     Call<Answer> addField(@Body RequestBody body);
     @POST("/api/addteam.php")
-    Call<Answer> addTeam(@Body JsonObject json);
+    Call<Answer> addTeam(@Body RequestBody body);
+    @POST("/api/getcontest.php")
+    Call<ContestTab> getContest(@Body RequestBody body);
+    @POST("api/sendmarks.php")
+    Call<Answer> sendMarks(@Body RequestBody body);
 
 }

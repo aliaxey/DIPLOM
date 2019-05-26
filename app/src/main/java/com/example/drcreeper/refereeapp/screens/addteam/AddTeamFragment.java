@@ -14,6 +14,7 @@ import com.example.drcreeper.refereeapp.screens.addfield.AddFieldViewModel;
 
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 public class AddTeamFragment extends Fragment {
 
@@ -30,6 +31,7 @@ public class AddTeamFragment extends Fragment {
         AddTeamViewModel viewModel = new AddTeamViewModel(getContext(),fragmentWorker);
         FragmentAddTeamBinding binding =
                 DataBindingUtil.inflate(inflater,R.layout.fragment_add_team,container,false);
+        binding.recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         binding.setVm(viewModel);
         return binding.getRoot();
     }

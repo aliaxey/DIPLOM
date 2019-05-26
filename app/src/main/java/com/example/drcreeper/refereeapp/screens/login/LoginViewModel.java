@@ -10,6 +10,7 @@ import com.example.drcreeper.refereeapp.RefereeApp;
 import com.example.drcreeper.refereeapp.SharedPreferencesWorker;
 import com.example.drcreeper.refereeapp.interfaces.FragmentWorker;
 import com.example.drcreeper.refereeapp.screens.contestchoose.ContestChooseFragment;
+import com.example.drcreeper.refereeapp.screens.register.RegisterFragment;
 
 import androidx.databinding.BaseObservable;
 import okhttp3.FormBody;
@@ -116,6 +117,9 @@ public class LoginViewModel extends BaseObservable {
         }else {
             setEmailCheck(false);
         }
+    }
+    public void register(View v){
+        fragmentWorker.switchFragment(new RegisterFragment());
     }
     private boolean validEmail(String email){
         if(email == null){

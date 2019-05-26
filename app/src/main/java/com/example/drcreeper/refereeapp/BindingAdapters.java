@@ -11,20 +11,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class BindingAdapters {
 
-    @BindingAdapter({"app:res_id"})
-    public static void setFileIcon(ImageView imageView, int resId){
-        imageView.setImageResource(resId);
-    }
+
     @BindingAdapter({"app:manager"})
-    public static void setLayoutManager(RecyclerView recyclerView, int managerId){
-        switch (managerId){
-            case 1:
-                recyclerView.setLayoutManager(new LinearLayoutManager(recyclerView.getContext()));
-                break;
-            default:
-                recyclerView.setLayoutManager(new GridLayoutManager(recyclerView.getContext(),managerId));
-        }
+    public static void setLayoutManager(RecyclerView recyclerView, int cols){
+        recyclerView.setLayoutManager(new GridLayoutManager(recyclerView.getContext(),cols));
     }
+
     @BindingAdapter({"app:visible"})
     public static void setVisiblity(View v, boolean visible){
         if(visible) {
@@ -33,4 +25,10 @@ public class BindingAdapters {
             v.setVisibility(View.INVISIBLE);
         }
     }
+    /*
+    @BindingAdapter({"app:res_id"})
+    public static void setFileIcon(ImageView imageView, int resId){
+        imageView.setImageResource(resId);
+    }
+    */
 }

@@ -84,11 +84,11 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
+            android:drawableRight="@{vm.passwordCheck?@drawable/ic_ok:@drawable/ic_err}"
             android:ems="10"
             android:hint="@string/reg_pass"
             android:inputType="textPassword"
             android:text="@={vm.password}"
-            android:drawableRight="@{vm.passwordCheck?@drawable/ic_ok:@drawable/ic_err}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView5" />
@@ -106,5 +106,15 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editText8" />
+
+        <TextView
+            android:id="@+id/reg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{vm::register}"
+            android:text="@string/reg_header"
+            android:textColor="@color/link"
+            tools:layout_editor_absoluteX="167dp"
+            tools:layout_editor_absoluteY="648dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

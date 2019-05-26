@@ -26,6 +26,7 @@ public class MenuViewModel extends BaseObservable {
     private Context context;
     private String name, key;
     private boolean isAdmin;
+    private ContestInfo body;
 
     MenuViewModel(Context ctx, FragmentWorker worker){
         super();
@@ -43,7 +44,7 @@ public class MenuViewModel extends BaseObservable {
         RefereeApp.getInstance().service.getInfo(request).enqueue(new Callback<ContestInfo>() {
             @Override
             public void onResponse(Call<ContestInfo> call, Response<ContestInfo> response) {
-                ContestInfo body = response.body();
+                body = response.body();
                 if(body!=null){
                     setName(body.getName());
                     setKey(body.getId()+body.getKey());
@@ -100,4 +101,5 @@ public class MenuViewModel extends BaseObservable {
                 break;
         }
     }
+
 }

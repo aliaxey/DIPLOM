@@ -136,6 +136,7 @@ public class ContestChooseViewModel extends BaseObservable {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 preferences.setContest(response.body().getResult());
+                                setCode(code);
                             }
                         };
                         AlertDialog dialog = new AlertDialog.Builder(context)

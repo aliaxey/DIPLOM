@@ -50,4 +50,7 @@ public class RegisterViewModel {
     public void goChoose(){
         worker.switchFragment(new LoginFragment());
     }
+    public void login(View v){
+        goChoose();
+    }
 }

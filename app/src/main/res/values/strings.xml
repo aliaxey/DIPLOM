@@ -56,4 +56,13 @@
     <string name="wrong_number">Wrong number</string>
     <string name="add_info_name">Info name</string>
     <string name="add_team_title">Add team</string>
+    <string name="err_null_values">Input values</string>
+    <string name="err_no_properties">First add header and field</string>
+    <string name="menu_logout">Logout</string>
+    <string name="menu_set_contest">Choose contest</string>
+    <string name="contest">Evaluation</string>
+    <string name="submit">Send</string>
+    <string name="err_number">Error number</string>
+    <string name="err_max_value">Mark more tham max value</string>
+    <string name="success">Sended</string>
 </resources>
