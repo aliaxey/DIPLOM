@@ -32,23 +32,25 @@ public class MenuViewModel extends BaseObservable {
         super();
         fragmentWorker = worker;
         context  = ctx;
-        setName(context.getString(R.string.contest_name)+"...");
-        setKey(context.getString(R.string.contest_key)+"...");
         setAdmin(false);
-        SharedPreferencesWorker preferences = new SharedPreferencesWorker(context);
-        FormBody request = new FormBody.Builder()
-                .add("id",preferences.getUserString())
-                .add("pass",preferences.getPassword())
-                .add("contest",preferences.getContestString())
-                .build();
+        final SharedPreferencesWorker preferences = new SharedPreferencesWorker(context);
+        if(preferences.getContestName()!=""){
+            setName(context.getString(R.string.contest_name)+preferences.getContestName());
+            setKey(context.getString(R.string.contest_key)+preferences.getContestCode());
+        }else{
+            setName(context.getString(R.string.contest_name)+"...");
+            setKey(context.getString(R.string.contest_key)+"...");
+        }
+        FormBody request = preferences.getContestRequest().build();
         RefereeApp.getInstance().service.getInfo(request).enqueue(new Callback<ContestInfo>() {
             @Override
             public void onResponse(Call<ContestInfo> call, Response<ContestInfo> response) {
                 body = response.body();
                 if(body!=null){
-                    setName(body.getName());
-                    setKey(body.getId()+body.getKey());
+                    setName(context.getString(R.string.contest_name)+body.getName());
+                    setKey(context.getString(R.string.contest_key)+body.getId()+body.getKey());
                     setAdmin(body.getAccess()>0);
+                    preferences.setContestData(body.getName(),body.getId()+body.getKey());
                 }else{
                     onFailure(call,null);
                 }

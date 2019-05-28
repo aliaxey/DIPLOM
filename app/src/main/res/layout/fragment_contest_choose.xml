@@ -31,7 +31,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:checked="true"
+                android:checked="@{!vm.newContest}"
                 android:onClick="@{vm::onSwitchClick}"
                 android:text="@string/choose_btn_code"
                 android:theme="@style/Header" />
@@ -41,6 +41,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:checked="@{vm.newContest}"
                 android:onClick="@{vm::onSwitchClick}"
                 android:text="@string/choose_btn_new"
                 android:theme="@style/Header" />

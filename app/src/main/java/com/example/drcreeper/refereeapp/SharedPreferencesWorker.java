@@ -10,6 +10,8 @@ public class SharedPreferencesWorker {
     private static final String ID = "id";
     private static final String PASSWORD = "password";
     private static final String CONTEST = "contest";
+    private static final String CONTEST_CODE = "contest_code";
+    private static final String CONTEST_NAME = "name";
     private static final String STATE = "state";
 
     public static final int INITIAL = 0;
@@ -34,6 +36,13 @@ public class SharedPreferencesWorker {
         editor.putInt(STATE,SET_CONTEST);
         editor.apply();
     }
+    public void setContestData(String name,String key){
+        SharedPreferences preferences = context.getSharedPreferences(FILENAME,Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString(CONTEST_NAME,name);
+        editor.putString(CONTEST_CODE,key);
+        editor.apply();
+    }
     public int getState(){
         return getPreferences().getInt(STATE,INITIAL);
     }
@@ -52,6 +61,13 @@ public class SharedPreferencesWorker {
     public String getContestString(){
         return String.valueOf(getContest());
     }
+    public String getContestName(){
+        return getPreferences().getString(CONTEST_NAME,"");
+    }
+    public String getContestCode(){
+        return getPreferences().getString(CONTEST_CODE,"");
+    }
+
     public FormBody.Builder getContestRequest(){
         return new FormBody.Builder()
                 .add("id",getUserString())

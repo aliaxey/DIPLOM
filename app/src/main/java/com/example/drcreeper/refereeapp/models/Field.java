@@ -23,7 +23,7 @@ public class Field {
     private int maxValue;
     @SerializedName("factor")
     @Expose
-    private int factor;
+    private float factor;
 
     public int getId() {
         return id;
@@ -65,12 +65,11 @@ public class Field {
         this.maxValue = maxValue;
     }
 
-    public int getFactor() {
+    public float getFactor() {
         return factor;
     }
 
-    public void setFactor(int factor) {
+    public void setFactor(float factor) {
         this.factor = factor;
     }
-
 }

@@ -23,10 +23,12 @@ public class AddTeamViewModel extends BaseObservable {
     private FragmentWorker fragmentWorker;
     private TeamFieldsRecyclerViewAdapter adapter;
     private String error;
+    private boolean isLoaded;
 
     public AddTeamViewModel(Context ctx,FragmentWorker worker){
         context = ctx;
         fragmentWorker = worker;
+        isLoaded = false;
         SharedPreferencesWorker preferences  = new SharedPreferencesWorker(context);
         RefereeApp.getInstance().service.getFields(preferences.getContestRequest().build())
                 .enqueue(new Callback<ContestFields>() {
@@ -38,6 +40,7 @@ public class AddTeamViewModel extends BaseObservable {
                                 fragmentWorker.onBack();
                             }else{
                                 setAdapter(new TeamFieldsRecyclerViewAdapter(response.body().getHeaders()));
+                                isLoaded = true;
                             }
                         }
                     }
@@ -55,6 +58,15 @@ public class AddTeamViewModel extends BaseObservable {
 
     public void setAdapter(TeamFieldsRecyclerViewAdapter adapter) {
         this.adapter = adapter;
+        notifyChange();
+    }
+
+    public boolean isLoaded() {
+        return isLoaded;
+    }
+
+    public void setLoaded(boolean loaded) {
+        isLoaded = loaded;
         notifyChange();
     }
 
