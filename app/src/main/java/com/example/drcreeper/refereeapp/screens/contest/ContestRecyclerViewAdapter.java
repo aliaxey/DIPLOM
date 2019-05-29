@@ -8,18 +8,18 @@ import com.example.drcreeper.refereeapp.databinding.TableFieldBinding;
 import com.example.drcreeper.refereeapp.databinding.TableHeaderBinding;
 import com.example.drcreeper.refereeapp.databinding.TableInfoBinding;
 import com.example.drcreeper.refereeapp.databinding.TableSubmitBinding;
-import com.example.drcreeper.refereeapp.models.ContestFields;
 import com.example.drcreeper.refereeapp.models.ContestTab;
 import com.example.drcreeper.refereeapp.models.Field;
 import com.example.drcreeper.refereeapp.models.Header;
+import com.example.drcreeper.refereeapp.models.Team;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import androidx.annotation.NonNull;
+import androidx.collection.ArraySet;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
-import retrofit2.Callback;
 
 public class ContestRecyclerViewAdapter extends RecyclerView.Adapter<ContestViewHolder> {
     static final int TYPE_HEADER = 1;
@@ -34,6 +34,7 @@ public class ContestRecyclerViewAdapter extends RecyclerView.Adapter<ContestView
     private List<List<String>> info;
     private List<List<TableField>> values;
     private List<TableSubmit> submits;
+    private ArraySet<Integer> teams;
 
     public ContestRecyclerViewAdapter(ContestViewModel base, ContestTab fields){
         headers = new ArrayList<>();
@@ -43,20 +44,49 @@ public class ContestRecyclerViewAdapter extends RecyclerView.Adapter<ContestView
         headers.add("#");
         infoPart = fields.getHeaders().size();
         width = 2 + fields.getHeaders().size() + fields.getFields().size();
-        rows = fields.getTeams().size()/infoPart;
+        teams  = new ArraySet<>();
+        rows = 0;
+        for (Team team : fields.getTeams()){
+            if (!teams.contains(team.getTeamId())) {
+                teams.add(team.getTeamId());
+                rows++;
+            }
+        }
+        //rows = fields.getTeams().size()/infoPart;
         for(Header header:fields.getHeaders()){
             headers.add(header.getName());
         }
         for (Field field:fields.getFields()){
             headers.add(field.getName() +"("+field.getMaxValue()+")");
         }
+        for(int team:teams){
+            List<String> infoRow = new ArrayList<>();
+            infoRow.add(String.valueOf(team));
+            for (Header header : fields.getHeaders()){
+                infoRow.add(getInfo(fields.getTeams(),header.getId(),team));
+            }
+            info.add(infoRow);
+            List<TableField> holders = new ArrayList<>();
+            for (Field field : fields.getFields()) {
+                holders.add(new TableField(team, field.getId(), field.getMaxValue()));
+            }
+            values.add(holders);
+            submits.add(new TableSubmit(base,teams.indexOf(team)));
+        }
+        submits.add(new TableSubmit(base,-1));
+        /*
         for (int i = 0;i < rows; i++){
+
             List<String> infoRow = new ArrayList<>();
             int team = fields.getTeams().get(i*infoPart).getTeamId();
             infoRow.add(String.valueOf(team));
             for (int j = 1;j < infoPart+1;j++){
                 infoRow.add(fields.getTeams().get(i*infoPart +(j -1)).getValue());
             }
+
+            //List<String> infoRow = new ArrayList<>();
+            //for (int team: teams){
+            //    infoRow.add(String.valueOf(team));}
             info.add(infoRow);
             List<TableField> holders  = new ArrayList<>();
             for (Field field: fields.getFields()) {
@@ -66,7 +96,7 @@ public class ContestRecyclerViewAdapter extends RecyclerView.Adapter<ContestView
             submits.add(new TableSubmit(base,i));
         }
         submits.add(new TableSubmit(base,-1));
-
+        */
     }
 
 
@@ -148,5 +178,13 @@ public class ContestRecyclerViewAdapter extends RecyclerView.Adapter<ContestView
     }
     public int getValuesCount(){
         return values.size();
+    }
+    private String getInfo(List<Team> list,int id,int team){
+        for(Team info : list){
+            if(info.getHeaderId() == id && info.getTeamId() == team){
+                return info.getValue();
+            }
+        }
+        return "?";
     }
 }

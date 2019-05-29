@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Referee App</string>
+    <string name="app_name">Электронное жюри</string>
     <string name="reg_header">Регистрация</string>
     <string name="reg_email">Адрес электронной поччты</string>
     <string name="reg_name">Имя</string>
@@ -60,4 +60,7 @@
     <string name="err_number">Ошибка номера</string>
     <string name="err_max_value">Оценка больше максимальной</string>
     <string name="success">Успешно отправлено</string>
+    <string name="result_header">Результат соревнования</string>
+    <string name="total">Всего очков</string>
+    <string name="place">Место</string>
 </resources>

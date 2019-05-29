@@ -3,25 +3,20 @@
     <data>
         <variable
             name="vm"
-            type="com.example.drcreeper.refereeapp.screens.contest.TableText"/>
+            type="com.example.drcreeper.refereeapp.screens.results.TableMark"/>
     </data>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/table_header"
-        android:gravity="center"
-        android:minWidth="10dp"
-        android:padding="4dp">
+        android:background="@{vm.color}"
+        android:gravity="center">
 
         <TextView
-            android:id="@+id/name"
+            android:id="@+id/mark"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:minWidth="20dp"
-            android:text="@{vm.name}"
+            android:text="@{vm.mark}"
             android:theme="@style/Header" />
     </LinearLayout>
-
 </layout>

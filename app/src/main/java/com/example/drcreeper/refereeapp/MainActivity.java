@@ -13,11 +13,14 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 public class MainActivity extends AppCompatActivity implements FragmentWorker {
-
+    static final String  FRAGMENT_CREATED = "created";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        if(savedInstanceState != null && savedInstanceState.getBoolean(FRAGMENT_CREATED)){
+            return;
+        }
         Fragment fragment;
         switch (new SharedPreferencesWorker(this).getState()){
             case SharedPreferencesWorker.SET_CONTEST:
@@ -32,6 +35,13 @@ public class MainActivity extends AppCompatActivity implements FragmentWorker {
         }
         getTransaction().add(R.id.root,fragment).commitNow();
     }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putBoolean(FRAGMENT_CREATED,true);
+    }
+
     public void switchFragment(Fragment newFragment){
         FragmentTransaction transaction = getTransaction();
         transaction.replace(R.id.root,newFragment);

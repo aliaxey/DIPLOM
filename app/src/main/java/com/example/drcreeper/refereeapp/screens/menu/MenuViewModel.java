@@ -13,6 +13,7 @@ import com.example.drcreeper.refereeapp.screens.addteam.AddTeamFragment;
 import com.example.drcreeper.refereeapp.screens.contest.ContestFragment;
 import com.example.drcreeper.refereeapp.screens.contestchoose.ContestChooseFragment;
 import com.example.drcreeper.refereeapp.screens.fields.FieldsFragment;
+import com.example.drcreeper.refereeapp.screens.results.ResultsFragment;
 
 import androidx.databinding.BaseObservable;
 import androidx.fragment.app.Fragment;
@@ -97,6 +98,9 @@ public class MenuViewModel extends BaseObservable {
                 break;
             case R.id.btn_reg:
                 fragmentWorker.switchFragment(new AddTeamFragment());
+                break;
+            case R.id.btn_results:
+                fragmentWorker.switchFragment(new ResultsFragment());
                 break;
             case R.id.btn_edit:
                 fragmentWorker.switchFragment(new FieldsFragment());

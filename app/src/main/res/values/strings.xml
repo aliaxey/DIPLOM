@@ -65,4 +65,7 @@
     <string name="err_number">Error number</string>
     <string name="err_max_value">Mark more tham max value</string>
     <string name="success">Sended</string>
+    <string name="result_header">Results</string>
+    <string name="total">Total score</string>
+    <string name="place">Place</string>
 </resources>
